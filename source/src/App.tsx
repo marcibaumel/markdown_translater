@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import MDEditor from '@uiw/react-md-editor';
 
 function App() {
-  const [value, setValue] = useState("## Hello");
+  const [value, setValue] = useState("");
 
   const onChange = (e: any): void => {
     console.log(e);
@@ -13,18 +13,20 @@ function App() {
   }
 
   return (
+    <div className="background">
     <motion.div
       initial={{ opacity: 0, scale: 0.2 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.7 }}
       className="container mt-5"
-      data-color-mode="light">
+      data-color-mode="dark">
       <MDEditor
         height={500}
         value={value}
         onChange={onChange}
       />
     </motion.div>
+    </div>
   );
 }
 
